@@ -28,11 +28,11 @@ const PostCard = ({ post }) => {
             height={imageHeight}
           />
         </div>
-        <p>By {author}</p>
-        <p>
+        <p className="text-align-right tertiary-color">By {author}</p>
+        <p className="text-align-right tertiary-color">
           Published on {month} {day}
         </p>
-        <h2>{title}</h2>
+        <h2 className="text-align-center">{title}</h2>
       </div>
     </Link>
   );

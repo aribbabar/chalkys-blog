@@ -53,11 +53,13 @@ export default function PostDetails({ post }) {
             alt={imageAlt}
             layout="fill"
             objectFit="cover"
-            quality="100"
           />
         </div>
-        <p className={`${styles.author} text-align-right`}>
-          By {author} | Published on {month} {day}
+        <p className={`${styles.author} text-align-right tertiary-color`}>
+          By {author}
+        </p>
+        <p className="text-align-right tertiary-color">
+          Published on {month} {day}
         </p>
         <h2 className="text-align-center">{title}</h2>
         <div className="break-line"></div>
@@ -72,6 +74,15 @@ export async function getStaticProps({ params }) {
     content_type: "post",
     "fields.slug": params.slug,
   });
+
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: { post: items[0] },

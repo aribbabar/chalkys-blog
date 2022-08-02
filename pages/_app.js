@@ -20,6 +20,9 @@ function MyApp({ Component, pageProps }) {
         </div>
       </header>
       <Component {...pageProps} />
+      <footer className="footer">
+        <p>Made with 💙 by Arib Farooqui</p>
+      </footer>
     </>
   );
 }
