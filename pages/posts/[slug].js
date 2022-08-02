@@ -11,6 +11,7 @@ const renderOptions = {
         <div className={styles.imageContainer}>
           <Image
             src={`https:${node.data.target.fields.file.url}`}
+            alt={node.data.target.fields.description}
             height={node.data.target.fields.file.details.image.height}
             width={node.data.target.fields.file.details.image.width}
           />
@@ -24,6 +25,7 @@ export default function PostDetails({ post }) {
   console.log(post);
 
   const imageSrc = `https:${post.fields.coverImage.fields.file.url}`;
+  const imageAlt = post.fields.coverImage.fields.description;
   const imageWidth = post.fields.coverImage.fields.file.details.image.width;
   const imageHeight = post.fields.coverImage.fields.file.details.image.height;
 
@@ -39,7 +41,12 @@ export default function PostDetails({ post }) {
   return (
     <div className={styles.container}>
       <div className={styles.postContainer}>
-        <Image src={imageSrc} width={imageWidth} height={imageHeight} />
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
+        />
         <p className="text-align-right">
           By {author} | Published on {month} {day}
         </p>

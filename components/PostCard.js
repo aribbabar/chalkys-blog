@@ -5,6 +5,7 @@ const PostCard = ({ post }) => {
   console.log(post);
 
   const imageSrc = `https:${post.fields.coverImage.fields.file.url}`;
+  const imageAlt = post.fields.coverImage.fields.description;
   const imageWidth = post.fields.coverImage.fields.file.details.image.width;
   const imageHeight = post.fields.coverImage.fields.file.details.image.height;
 
@@ -20,7 +21,12 @@ const PostCard = ({ post }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image src={imageSrc} width={imageWidth} height={imageHeight} />
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
+        />
       </div>
       <p>By {author}</p>
       <p>

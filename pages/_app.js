@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <header>
         <div className={styles.imageContainer}>
-          <Image src={"/logo.svg"} width={150} height={100} />
+          <Image src={"/logo.svg"} alt="logo" width={150} height={100} />
         </div>
       </header>
       <Component {...pageProps} />
