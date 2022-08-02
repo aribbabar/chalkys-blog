@@ -4,8 +4,16 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
   overflow-wrap: break-word;
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.author {
+  margin-top: 0.5rem;
+}
+
+.date {
+  margin-bottom: 0.5rem;
 }
 
 /* .container:nth-child(odd) {

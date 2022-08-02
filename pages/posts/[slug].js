@@ -4,6 +4,7 @@ import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import Skeleton from "../../components/Skeleton";
+import Head from "next/head";
 
 const renderOptions = {
   renderNode: {
@@ -45,27 +46,32 @@ export default function PostDetails({ post }) {
   const body = post.fields.body;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.postContainer}>
-        <div className={styles.coverImageContainer}>
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            layout="fill"
-            objectFit="cover"
-          />
+    <>
+      <Head>
+        <title>Chalky's Blog | {title}</title>
+      </Head>
+      <div className={styles.container}>
+        <div className={styles.postContainer}>
+          <div className={styles.coverImageContainer}>
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <p className={`${styles.author} text-align-right tertiary-color`}>
+            By {author}
+          </p>
+          <p className={`${styles.date} text-align-right tertiary-color`}>
+            Published on {month} {day}
+          </p>
+          <h2 className="text-align-center">{title}</h2>
+          <div className="break-line"></div>
+          <div>{documentToReactComponents(body, renderOptions)}</div>
         </div>
-        <p className={`${styles.author} text-align-right tertiary-color`}>
-          By {author}
-        </p>
-        <p className="text-align-right tertiary-color">
-          Published on {month} {day}
-        </p>
-        <h2 className="text-align-center">{title}</h2>
-        <div className="break-line"></div>
-        <div>{documentToReactComponents(body, renderOptions)}</div>
       </div>
-    </div>
+    </>
   );
 }
 
