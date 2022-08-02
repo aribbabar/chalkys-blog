@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.postContainer {
+  max-width: 800px;
+}
+
+.imageContainer {
+  margin: 1rem 0;
+}
