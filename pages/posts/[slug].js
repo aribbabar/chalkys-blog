@@ -41,13 +41,16 @@ export default function PostDetails({ post }) {
   return (
     <div className={styles.container}>
       <div className={styles.postContainer}>
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          width={imageWidth}
-          height={imageHeight}
-        />
-        <p className="text-align-right">
+        <div className={styles.coverImageContainer}>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            layout="fill"
+            objectFit="cover"
+            quality="100"
+          />
+        </div>
+        <p className={`${styles.author} text-align-right`}>
           By {author} | Published on {month} {day}
         </p>
         <h2 className="text-align-center">{title}</h2>
