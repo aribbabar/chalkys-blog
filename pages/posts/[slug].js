@@ -3,6 +3,7 @@ import client from "../../lib/client";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
+import Skeleton from "../../components/Skeleton";
 
 const renderOptions = {
   renderNode: {
@@ -22,7 +23,12 @@ const renderOptions = {
 };
 
 export default function PostDetails({ post }) {
-  console.log(post);
+  if (!post)
+    return (
+      <div className={styles.container}>
+        <Skeleton />
+      </div>
+    );
 
   const imageSrc = `https:${post.fields.coverImage.fields.file.url}`;
   const imageAlt = post.fields.coverImage.fields.description;
@@ -88,6 +94,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }

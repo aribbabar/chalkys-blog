@@ -1,8 +1,9 @@
 import styles from "../styles/PostCard.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const PostCard = ({ post }) => {
-  console.log(post);
+  const slug = post.fields.slug;
 
   const imageSrc = `https:${post.fields.coverImage.fields.file.url}`;
   const imageAlt = post.fields.coverImage.fields.description;
@@ -16,24 +17,24 @@ const PostCard = ({ post }) => {
   const month = date.toLocaleString("default", { month: "long" });
   const day = date.getDate();
 
-  console.log(month, day);
-
   return (
-    <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          width={imageWidth}
-          height={imageHeight}
-        />
+    <Link href={`/posts/${slug}`}>
+      <div className={styles.container}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+          />
+        </div>
+        <p>By {author}</p>
+        <p>
+          Published on {month} {day}
+        </p>
+        <h2>{title}</h2>
       </div>
-      <p>By {author}</p>
-      <p>
-        Published on {month} {day}
-      </p>
-      <h2>{title}</h2>
-    </div>
+    </Link>
   );
 };
 
