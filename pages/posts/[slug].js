@@ -48,7 +48,7 @@ export default function PostDetails({ post }) {
   return (
     <>
       <Head>
-        <title>Chalky's Blog | {title}</title>
+        <title>Chalky&apos;s Blog | {title}</title>
       </Head>
       <div className={styles.container}>
         <div className={styles.postContainer}>
