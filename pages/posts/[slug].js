@@ -2,7 +2,7 @@ import styles from "../../styles/Post.module.css";
 import client from "../../lib/client";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Skeleton from "../../components/Skeleton";
 import Head from "next/head";
 
@@ -18,6 +18,15 @@ const renderOptions = {
             width={node.data.target.fields.file.details.image.width}
           />
         </div>
+      );
+    },
+  },
+  renderMark: {
+    [MARKS.CODE]: (code) => {
+      return (
+        <pre>
+          <code>{code}</code>
+        </pre>
       );
     },
   },
