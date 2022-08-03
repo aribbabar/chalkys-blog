@@ -43,11 +43,28 @@ blockquote p {
   display: inline;
 }
 
-code {
+/* code {
   background-color: #eee;
   border-radius: 3px;
   font-family: courier, monospace;
   padding: 0 3px;
+} */
+
+pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid var(--secondary-color);
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
 }
 
 .break-line {
