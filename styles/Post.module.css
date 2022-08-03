@@ -27,3 +27,17 @@
 .imageContainer {
   margin: 1rem 0;
 }
+
+.bodyContainer * {
+  margin: 1rem 0;
+}
+
+.bodyContainer ul,
+.bodyContainer ol {
+  list-style-position: inside;
+}
+
+.bodyContainer ul li *,
+.bodyContainer ol li * {
+  display: inline;
+}

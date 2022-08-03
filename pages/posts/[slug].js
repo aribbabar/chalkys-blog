@@ -68,7 +68,9 @@ export default function PostDetails({ post }) {
           </p>
           <h2 className="text-align-center">{title}</h2>
           <div className="break-line"></div>
-          <div>{documentToReactComponents(body, renderOptions)}</div>
+          <div className={styles.bodyContainer}>
+            {documentToReactComponents(body, renderOptions)}
+          </div>
         </div>
       </div>
     </>
