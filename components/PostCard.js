@@ -16,23 +16,19 @@ const PostCard = ({ post }) => {
   const date = new Date(post.sys.createdAt);
   const month = date.toLocaleString("default", { month: "long" });
   const day = date.getDate();
+  const year = date.getFullYear();
 
   return (
     <Link href={`/posts/${slug}`}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            width={imageWidth}
-            height={imageHeight}
-          />
+          <img src={imageSrc} alt={imageAlt} />
         </div>
         <p className={`${styles.author} text-align-right tertiary-color`}>
           By {author}
         </p>
         <p className={`${styles.date} text-align-right tertiary-color`}>
-          Published on {month} {day}
+          Published on {month} {day}, {year}
         </p>
         <h2 className="text-align-center">{title}</h2>
       </div>

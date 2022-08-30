@@ -10,3 +10,17 @@
   gap: 1rem;
   padding: 1rem;
 }
+
+@media (min-width: 1000px) {
+  .postsContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .postsContainer > *:nth-child(odd) {
+    justify-self: end;
+  }
+
+  .postsContainer > *:nth-child(even) {
+    justify-self: start;
+  }
+}

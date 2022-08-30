@@ -51,6 +51,7 @@ export default function PostDetails({ post }) {
   const date = new Date(post.sys.createdAt);
   const month = date.toLocaleString("default", { month: "long" });
   const day = date.getDate();
+  const year = date.getFullYear();
 
   const body = post.fields.body;
 
@@ -61,19 +62,12 @@ export default function PostDetails({ post }) {
       </Head>
       <div className={styles.container}>
         <div className={styles.postContainer}>
-          <div className={styles.coverImageContainer}>
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
+          <img src={imageSrc} alt={imageAlt} />
           <p className={`${styles.author} text-align-right tertiary-color`}>
             By {author}
           </p>
           <p className={`${styles.date} text-align-right tertiary-color`}>
-            Published on {month} {day}
+            Published on {month} {day}, {year}
           </p>
           <h2 className="text-align-center">{title}</h2>
           <div className="break-line"></div>

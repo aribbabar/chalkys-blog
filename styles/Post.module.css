@@ -2,42 +2,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.postContainer {
-  min-width: 70vw;
-  max-width: 800px;
   padding: 1rem;
 }
 
-.coverImageContainer {
-  width: 100%;
-  height: 500px;
-  position: relative;
+.postContainer {
+  width: 80vw;
+  max-width: 700px;
 }
 
-.author {
-  margin-top: 0.5rem;
-}
-
-.date {
-  margin-bottom: 0.5rem;
-}
-
-.imageContainer {
+.postContainer h3 {
   margin: 1rem 0;
 }
 
-.bodyContainer * {
-  margin: 1rem 0;
+.postContainer p {
+  margin: 0.5rem 0;
 }
 
-.bodyContainer ul,
-.bodyContainer ol {
-  list-style-position: inside;
-}
-
-.bodyContainer ul li *,
-.bodyContainer ol li * {
-  display: inline;
+.postContainer ol {
+  margin: 0 0 1rem 1rem;
 }

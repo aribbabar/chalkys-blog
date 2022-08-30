@@ -8,22 +8,20 @@
   flex-direction: column;
 }
 
+.imageContainer {
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.container img {
+  width: 100%;
+}
+
 .author {
   margin-top: 0.5rem;
 }
 
 .date {
   margin-bottom: 0.5rem;
-}
-
-/* .container:nth-child(odd) {
-  justify-self: end;
-}
-
-.container:nth-child(even) {
-  justify-self: start;
-} */
-
-.imageContainer {
-  width: 100%;
 }
