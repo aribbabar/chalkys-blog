@@ -10,6 +10,12 @@ export default function Home({ posts }) {
         <title>Chalky&apos;s Blog</title>
         <meta name="description" content="Chalky's Blog" />
         <link rel="icon" href="/favicon.svg" />
+        <meta property="og:title" content="Chalky's Blog" />
+        <meta
+          property="og:description"
+          content="Tutorials, Life, and Technology"
+        />
+        <meta property="og:image" content="/logo.svg" />
       </Head>
 
       <div className={styles.postsContainer}>
@@ -23,13 +29,13 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const res = await client.getEntries({
-    content_type: "post",
+    content_type: "post"
   });
 
   return {
     props: {
-      posts: res.items,
+      posts: res.items
     },
-    revalidate: 1,
+    revalidate: 1
   };
 }
