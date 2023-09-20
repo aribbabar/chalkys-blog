@@ -1,2 +1,2 @@
 # Chalky's Blog
-Visit here: 
+Visit here: https://blog.chalkys.net/
